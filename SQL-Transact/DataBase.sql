@@ -1,0 +1,67 @@
+--DROP DATABASE Sucursal;
+--CREATE DATABASE Sucursal;
+--GO 
+
+USE Sucursal;
+GO
+
+CREATE TABLE IDType (
+    IDType INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    NameType VARCHAR(100) NOT NULL
+);
+GO
+
+CREATE TABLE Person (
+    PersonID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    FirstLastName VARCHAR(100) NOT NULL,
+    SecondLastName VARCHAR(100),
+    Birthday DATE NOT NULL,
+    Phone1 VARCHAR(100) NOT NULL,
+    Phone2 VARCHAR(100),
+    UserName VARCHAR(100) NOT NULL,
+    Password VARCHAR(100) NOT NULL,
+    IDType INT NOT NULL FOREIGN KEY REFERENCES IDType(IDType) 
+);
+GO
+
+CREATE TABLE Province (
+    ProvinceID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    ProvinceName VARCHAR(150) NOT null
+);
+GO
+
+CREATE TABLE Canton (
+    CantonID INT NOT null IDENTITY(1,1) PRIMARY KEY,
+    CantonName  VARCHAR(150) NOT null,
+    ProvinceID INT NOT NULL FOREIGN KEY REFERENCES Province(ProvinceID)
+);
+GO
+
+CREATE TABLE District (
+    DistrictID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    DistrictName VARCHAR(150) NOT NULL,
+    CantonID INT NOT NULL FOREIGN KEY REFERENCES Canton(CantonID) 
+);
+GO
+
+CREATE TABLE Direction (
+    DirectionID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    Address varchar(300) NOT NULL,
+    Point GEOGRAPHY NOT NULL,
+    DistrictID INT NOT NULL FOREIGN KEY REFERENCES District(DistrictID)
+);
+GO
+
+CREATE TABLE UserType(
+    UserTypeName VARCHAR(100),
+    UserTypeID INT NOT NULL IDENTITY(1,1) PRIMARY KEY
+);
+GO
+
+CREATE TABLE Employee(
+    EmployeeID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    UserTypeID INT NOT NULL FOREIGN KEY REFERENCES UserType(UserTypeID)
+);
+GO
+

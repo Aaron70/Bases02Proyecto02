@@ -1,0 +1,47 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/Proyecto02/dist
+/Proyecto02/tmp
+/Proyecto02/out-tsc
+# Only exists if Bazel was run
+/Proyecto02/bazel-out
+
+# dependencies
+/Proyecto02/node_modules
+
+# profiling files
+/Proyecto02/chrome-profiler-events*.json
+/Proyecto02/speed-measure-plugin*.json
+
+# IDEs and editors
+/Proyecto02/.idea
+/Proyecto02/.project
+/Proyecto02/.classpath
+/Proyecto02/.c9/
+/Proyecto02/*.launch
+/Proyecto02/.settings/
+/Proyecto02/*.sublime-workspace
+
+# IDE - VSCode
+/Proyecto02/.vscode/*
+/Proyecto02/!.vscode/settings.json
+/Proyecto02/!.vscode/tasks.json
+/Proyecto02/!.vscode/launch.json
+/Proyecto02/!.vscode/extensions.json
+/Proyecto02/.history/*
+
+# misc
+/Proyecto02/.sass-cache
+/Proyecto02/connect.lock
+/Proyecto02/coverage
+/Proyecto02/libpeerconnection.log
+/Proyecto02/npm-debug.log
+/Proyecto02/yarn-error.log
+/Proyecto02/testem.log
+/Proyecto02/typings
+
+# System Files
+/Proyecto02/.DS_Store
+/Proyecto02/Thumbs.db
+

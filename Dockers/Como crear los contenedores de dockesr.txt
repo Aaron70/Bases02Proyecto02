@@ -1,0 +1,4 @@
+Como crear los contenedores de dockesr
+
+
+Docker run -d -p puertoMaquina:puertoContenedor --name NombreDelContenedor -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YoUrPaSsWoRd" mcr.microsoft.com/mssql/server
